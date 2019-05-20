@@ -161,11 +161,3 @@ if (window.self !== window.top) {
 if (('ontouchstart' in window) || (window.DocumentTouch && document instanceof DocumentTouch)) {
   document.getElementsByClassName('zoom-container')[0].style.display = 'none';
 }
-
-// initialize mapzen bug
-var mzBug = new MapzenBug({
-  name: window.bugTitle,
-  link: 'https://github.com/mapzen/d3-vector-tiles',
-  tweet: 'A D3 vector map demo from @mapzen',
-  repo: 'https://github.com/mapzen/d3-vector-tiles'
-});
