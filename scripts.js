@@ -17,9 +17,9 @@ var tilePath = d3.geo.path()
 
 var zoom = d3.behavior.zoom()
     .scale(projection.scale() * 2 * Math.PI)
-    .scaleExtent([1 << 12, 1 << 25]) // 12 to 25 is roughly z4-z5 to z17
+    .scaleExtent([1 << 12, 1 << 24]) // 12 to 25 is roughly z4-z5 to z17
     //sf - 37.7524/-122.4407
-    .translate(projection([-122.4407, 37.7524]).map(function(x) { return -x; }))
+    .translate(projection([ -72.35, 43.65 ]).map(function(x) { return -x; }))
     .on("zoom", zoomed);
 
 var map = d3.select("body").append("div")
@@ -46,7 +46,7 @@ var zoom_out = zoom_controls.append("a")
 
 var info = map.append("div")
     .attr("class", "info")
-    .html('<a href="http://bl.ocks.org/mbostock/5593150" target="_top">Mike Bostock</a> | © <a href="https://www.openstreetmap.org/copyright" target="_top">OpenStreetMap contributors</a> | <a href="https://mapzen.com/projects/vector-tiles" title="Tiles courtesy of Mapzen" target="_top">Mapzen</a>');
+    .html('© <a href="https://www.openstreetmap.org/copyright" target="_top">OpenStreetMap contributors</a> | <a href="https://mapzen.com/projects/vector-tiles" title="Tiles courtesy of Mapzen" target="_top">Mapzen</a>');
 
 zoomed();
 
